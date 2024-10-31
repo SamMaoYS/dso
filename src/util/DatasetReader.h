@@ -102,7 +102,8 @@ struct PrepImageItem
 class ImageFolderReader
 {
 public:
-	ImageFolderReader(std::string path, std::string calibFile, std::string gammaFile, std::string vignetteFile)
+	// ImageFolderReader(std::string path, std::string calibFile, std::string gammaFile, std::string vignetteFile)
+	ImageFolderReader(std::string path, std::string calibFile)
 	{
 		this->path = path;
 		this->calibfile = calibFile;
@@ -150,7 +151,8 @@ public:
 			getdir (path, files);
 
 
-		undistort = Undistort::getUndistorterForFile(calibFile, gammaFile, vignetteFile);
+		// undistort = Undistort::getUndistorterForFile(calibFile, gammaFile, vignetteFile);
+		undistort = Undistort::getUndistorterForFile(calibFile);
 
 
 		widthOrg = undistort->getOriginalSize()[0];

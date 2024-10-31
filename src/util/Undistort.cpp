@@ -263,7 +263,8 @@ Undistort::~Undistort()
 	if(remapY != 0) delete[] remapY;
 }
 
-Undistort* Undistort::getUndistorterForFile(std::string configFilename, std::string gammaFilename, std::string vignetteFilename)
+// Undistort* Undistort::getUndistorterForFile(std::string configFilename, std::string gammaFilename, std::string vignetteFilename)
+Undistort* Undistort::getUndistorterForFile(std::string configFilename)
 {
 	printf("Reading Calibration from file %s",configFilename.c_str());
 
@@ -369,10 +370,10 @@ Undistort* Undistort::getUndistorterForFile(std::string configFilename, std::str
         exit(1);
     }
 
-	u->loadPhotometricCalibration(
-				gammaFilename,
-				"",
-				vignetteFilename);
+	// u->loadPhotometricCalibration(
+	// 			gammaFilename,
+	// 			"",
+	// 			vignetteFilename);
 
 	return u;
 }

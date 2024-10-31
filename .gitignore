@@ -8,3 +8,9 @@ build-*
 *.a
 *.so.*
 thirdparty/libzip-1.1.1
+
+*.jpg
+*.png
+*.bmp
+*.txt
+Pangolin/
